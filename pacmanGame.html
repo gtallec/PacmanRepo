@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Titre</title>
+    </head>
+    
+    <body>
+    <p id = 'display'></p>
+    <p id = 'instruction'>Jeu en cours de chargement</p>
+    <div id = "pad">
+        <div>
+            <input type = "button" value = "up" id = 'upButton'/>
+        </div>
+        <div>
+            <input type = "button" value = "left" id = 'leftButton'/>
+            <input type = "button" value = "down" id = 'downButton'/>
+            <input type = "button" value = "right" id = 'rightButton'/>
+        </div>
+    </div>
+    
+
+    <script type = "text/javascript" src = "MessageSender/MessageSender.js"></script>
+    <script type = "text/javascript" src = "MessageSender/ModelMessageSender.js"></script>
+    <script type = "text/javascript" src = "Model/Model.js"></script>
+    <script type = "text/javascript" src = "MessageSender/ViewMessageSender.js"></script>
+    <script type = "text/javascript" src = "View/View.js"></script>
+    <script type = "text/javascript" src = "MessageSender/ControllerMessageSender.js"></script>
+    <script type = "text/javascript" src = "Controller/Controller.js"></script>
+    <script type = "text/javascript">
+    var controller = new Controller();
+    var leftButton = document.getElementById('leftButton');
+    leftButton.addEventListener('click',tackLeft);
+    function tackLeft()
+    {
+        controller.tack('left');
+    }
+    var rightButton = document.getElementById('rightButton');
+    rightButton.addEventListener('click',tackRight);
+    function tackRight()
+    {
+        controller.tack('right');
+    }
+    var upButton = document.getElementById('upButton');
+    upButton.addEventListener('click',tackUp);
+    function tackUp()
+    {
+        controller.tack('up');
+    }
+    var downButton = document.getElementById('downButton');
+    downButton.addEventListener('click',tackDown);
+    function tackDown()
+    {
+        controller.tack('down');
+    }
+
+
+    </script>
+
+    </body>
+</html>
